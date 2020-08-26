@@ -10,12 +10,16 @@
     <packaging>jar</packaging>
 
     <name>helidon-se-test</name>
-
+    <parent>
+        <groupId>io.helidon.applications</groupId>
+        <artifactId>helidon-se</artifactId>
+        <version>2.0.1</version>
+    </parent>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <kotlin.code.style>official</kotlin.code.style>
         <kotlin.compiler.jvmTarget>11</kotlin.compiler.jvmTarget>
-        <docker.platform>arm64</docker.platform>
+        <mainClass>com.albiworks.pocs.helidon.MainKt</mainClass>
     </properties>
 
     <repositories>
@@ -61,42 +65,16 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
+                <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
                     <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                        <configuration>
-                            <archive>
-                                <manifest><mainClass>com.albiworks.pocs.helidon.MainKt</mainClass></manifest>
-                            </archive>
-                            <descriptorRefs>
-                                <descriptorRef>jar-with-dependencies</descriptorRef>
-                            </descriptorRefs>
-                        </configuration>
+                        <id>copy-libs</id>
                     </execution>
                 </executions>
             </plugin>
             <plugin>
-                <groupId>com.google.cloud.tools</groupId>
-                <artifactId>jib-maven-plugin</artifactId>
-                <version>2.5.2</version>
-                <configuration>
-                    <from>
-                        <image>azul/zulu-openjdk-centos:11</image>
-                        <platforms>
-                            <platform>
-                                <architecture>${docker.platform}</architecture>
-                                <os>linux</os>
-                            </platform>
-                        </platforms>
-                    </from>
-                    <to>
-                        <image>docker.io/albiworks/helidon-se-test</image>
-                    </to>
-                </configuration>
+                <groupId>io.helidon.build-tools</groupId>
+                <artifactId>helidon-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
