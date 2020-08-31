@@ -1,0 +1,9 @@
+kind: pipeline
+type: docker
+name: principal
+
+steps:
+  - name: construir imagenes
+    image: ubuntu:latest
+    commands:
+      - docker build . --file Dockerfile --tag albiworks/helidon-se-test:latest
