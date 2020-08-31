@@ -4,6 +4,6 @@ name: principal
 
 steps:
   - name: construir imagenes
-    image: docker:rc
+    image: maven:3.6.3-adoptopenjdk-11
     commands:
-      - docker build . --file Dockerfile --tag albiworks/helidon-se-test:latest
+      - mvn package -DskipTests
