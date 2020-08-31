@@ -4,6 +4,6 @@ name: principal
 
 steps:
   - name: construir imagenes
-    image: ubuntu:latest
+    image: docker:rc
     commands:
       - docker build . --file Dockerfile --tag albiworks/helidon-se-test:latest
