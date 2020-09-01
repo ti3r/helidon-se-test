@@ -5,11 +5,11 @@ name: principal
 steps:
   - name: construir imagenes
     image: plugins/docker
-    environment:
-      PASSWD:
-        from_secret: docker_hub_password_secret
     settings:
       repo: albiworks/helidon-se-test
       username: ti3r
       password:
         from_secret: docker_hub_password_secret
+      tags:
+        - latest
+        - main
