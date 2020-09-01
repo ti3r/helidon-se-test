@@ -4,21 +4,6 @@ name: principal
 
 steps:
   - name: construir imagenes
-    image: maven:3.6.3-adoptopenjdk-11
-    commands:
-      - mvn package -DskipTests
-
-
----
-kind: pipeline
-type: exec
-name: docker
-
-platform:
-  os: linux
-  arch: amd64
-
-steps:
-  - name: greeting
-    commands:
-      - echo hello world
+    image: plugins/docker
+    settings:
+      repo: albiworks/helidon-se-test
