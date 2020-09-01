@@ -7,7 +7,7 @@ steps:
     image: plugins/docker
     settings:
       repo: albiworks/helidon-se-test
-      username: ti3r
+      username: ti3r.bubblenet@gmail.com
       password:
         from_secret: docker_hub_password_secret
       tags:
