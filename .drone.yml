@@ -1,5 +1,5 @@
 kind: pipeline
-type: docker
+type: kubernetes
 name: principal
 
 steps:
@@ -8,8 +8,7 @@ steps:
     settings:
       repo: albiworks/helidon-se-test
       username: ti3r.bubblenet@gmail.com
-      password:
-        from_secret: docker_hub_password_secret
+      password: a76d4c1d-8454-4c40-a1e8-6615991e4f8f
       tags:
         - latest
         - main
