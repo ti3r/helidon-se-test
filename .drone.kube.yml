@@ -1,5 +1,8 @@
+##
+## Pipeline to run inside kubernetes runners
+##
 kind: pipeline
-type: docker
+type: kubernetes
 name: principal
 
 steps:
