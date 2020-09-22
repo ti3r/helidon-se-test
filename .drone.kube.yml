@@ -8,7 +8,7 @@ name: principal
 steps:
   - name: construir imagenes
     image: plugins/docker
-    privileged: true
+    #privileged: true
     settings:
       repo: albiworks/helidon-se-test
       username: ti3r.bubblenet@gmail.com
