@@ -5,7 +5,15 @@ kind: pipeline
 type: kubernetes
 name: principal
 
+clone:
+  disable: true
+
+
 steps:
+  - name: alt_clone
+    image: drone/git
+    user: 1000420000
+    group: 1000420000
   - name: construir imagenes
     image: plugins/docker
     user: 1000420000
