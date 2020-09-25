@@ -8,6 +8,10 @@ name: principal
 clone:
   disable: true
 
+volumes:
+  - name: dockersock
+    host:
+      path: /var/run/docker.sock
 
 steps:
   - name: alt_clone
