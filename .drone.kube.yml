@@ -18,14 +18,9 @@ steps:
     image: maven:3-jdk-10
     commands:
       - mvn clean install
-#  - name: construir imagenes
-#    image: plugins/docker
-#    user: 1000420000
-#    group: 1000420000
-#    settings:
-#      repo: albiworks/helidon-se-test
-#      username: ti3r.bubblenet@gmail.com
-#      password: a76d4c1d-8454-4c40-a1e8-6615991e4f8f
-#      tags:
-#        - latest
-#        - main
+  - name: construir imagenes
+    image: plugins/docker
+    user: 1000420000
+    group: 1000420000
+    settings:
+      repo: dockerreg-prod.icfolson.com/tal/helidon-se-test
