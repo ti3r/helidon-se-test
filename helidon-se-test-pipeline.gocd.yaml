@@ -31,6 +31,6 @@ pipelines:
             job2:
               tasks:
                 - exec:
-                    command: echo
+                    command: mvn
                     arguments:
-                      - Hola Mundo!!!!
+                      - clean package
