@@ -28,3 +28,9 @@ pipelines:
                       - Starting pipeline
                     command: echo
                     run_if: passed
+            job2:
+              tasks:
+                - exec:
+                    command: echo
+                    arguments:
+                      - Hola Mundo!!!!
