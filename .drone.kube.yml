@@ -18,18 +18,18 @@ steps:
     image: drone/git
     user: 1000420000
     group: 1000420000
-  - name: build_mvn
-    image: maven:3-jdk-10
-    user: 1000420000
-    group: 1000420000
-    commands:
-      - mvn clean install
-  - name: construir imagenes
-    image: plugins/docker
-    user: 1000420000
-    group: 1000420000
-    settings:
-      repo: dockerreg-prod.icfolson.com/tal/helidon-se-test
+#  - name: build_mvn
+#    image: maven:3-jdk-10
+#    user: 1000420000
+#    group: 1000420000
+#    commands:
+#      - mvn clean install
+#  - name: construir imagenes
+#    image: plugins/docker
+#    user: 1000420000
+#    group: 1000420000
+#    settings:
+#      repo: dockerreg-prod.icfolson.com/tal/helidon-se-test
 #    volumes:
 #      - name: dockersock
 #        host:
